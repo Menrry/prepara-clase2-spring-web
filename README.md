@@ -1,7 +1,7 @@
-# Documentar un proyecto Spring Boot con Java 21 utilizando la última versión estable de 
+# Documentar un proyecto Spring Boot con Java 21 utilizando la última versión estable de: 
 # org.springdoc:springdoc-openapi-starter-webmvc-ui 
 ## Es un proceso relativamente sencillo. 
-## Aquí tienes los pasos a seguir:
+# Aquí tienes los pasos a seguir:
 
 # Paso 1: Añadir la Dependencia de Springdoc OpenAPI
 
@@ -168,6 +168,8 @@ class Usuario {
 
 ## Puedes personalizar aún más la documentación de tu API configurando propiedades en tu archivo:
 ## application.properties o application.yml. Algunas configuraciones comunes incluyen:
+
+# YAML
 
 springdoc:
   api-docs:
