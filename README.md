@@ -1,6 +1,9 @@
-# Documentar un proyecto Spring Boot con Java 21 utilizando la última versión estable de: 
-# org.springdoc:springdoc-openapi-starter-webmvc-ui 
-## Es un proceso relativamente sencillo. 
+# -----------------------------------------------------------
+# Documentar un proyecto Spring Boot con Java 21 utilizando 
+# la última versión estable de: 
+##    org.springdoc:springdoc-openapi-starter-webmvc-ui 
+##         Es un proceso relativamente sencillo. 
+# -----------------------------------------------------------
 # Aquí tienes los pasos a seguir:
 
 # Paso 1: Añadir la Dependencia de Springdoc OpenAPI
@@ -14,7 +17,7 @@
 </dependency>
 
 ## Después de añadir la dependencia, asegúrate de que tu sistema de construcción descargue 
-## las nuevas dependencias (por ejemplo, ejecutando mvn clean install en Maven.
+## las nuevas dependencias, como por ejemplo, ejecutando "mvn clean install" para Maven.
 
 # Paso 2: Ejecutar tu Aplicación Spring Boot
 
@@ -168,9 +171,9 @@ class Usuario {
 
 ## Puedes personalizar aún más la documentación de tu API configurando propiedades en tu archivo:
 ## application.properties o application.yml. Algunas configuraciones comunes incluyen:
-#------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------
 # YAML
-#------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------
 ## springdoc:
 ##  api-docs:
 ##    path: /v3/api-docs # Cambiar la ruta de la definición OpenAPI
@@ -179,7 +182,7 @@ class Usuario {
  ##   config:
   ##    syntaxHighlight:
    ##     activated: true
-    ##    theme: monokai
+          theme: monokai
   ## info:
 ##    title: Mi API de Usuarios
  ##   version: v1
@@ -187,21 +190,24 @@ class Usuario {
  ##   contact:
   ##    name: Tu Nombre
    ##   email: tu.email@example.com
-    ##  url: http://tu-sitio-web.com
+        url: http://tu-sitio-web.com
   ##  license:
   ##    name: Apache 2.0
-   ##   url: https://www.apache.org/licenses/LICENSE-2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0
 ##  servers:
  ##   - url: http://localhost:8080
   ##    description: Servidor local de desarrollo
  ##   - url: https://api.ejemplo.com
 ##      description: Servidor de producción
 
-# ------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------
 
-# Consulta la documentación oficial de Springdoc OpenAPI para obtener una 
-# lista completa de las propiedades de configuración disponibles.
+# Consulta la documentación oficial de Springdoc OpenAPI para 
+# obtener una lista completa de las propiedades de configuración 
+# disponibles.
 
-Siguiendo estos pasos, podrás documentar eficazmente tu proyecto Spring Boot con Java 21 utilizando Springdoc OpenAPI,
-proporcionando una documentación clara y útil para los consumidores de tu API. Recuerda revisar la interfaz de 
+Siguiendo estos pasos, podrás documentar eficazmente tu 
+proyecto Spring Boot con Java 21 utilizando Springdoc OpenAPI,
+proporcionando una documentación clara y útil para los consumidores 
+de tu API. Recuerda revisar la interfaz de 
 Swagger UI para verificar que la documentación se genera correctamente y realizar los ajustes necesarios con las anotaciones.
