@@ -1,28 +1,35 @@
-# Documentar un proyecto Spring Boot con Java 21 utilizando la última versión estable de org.springdoc:springdoc-openapi-starter-webmvc-ui es un proceso relativamente sencillo. 
-# Aquí tienes los pasos a seguir:
+# Documentar un proyecto Spring Boot con Java 21 utilizando la última versión estable de 
+# org.springdoc:springdoc-openapi-starter-webmvc-ui 
+## Es un proceso relativamente sencillo. 
+## Aquí tienes los pasos a seguir:
 
 # Paso 1: Añadir la Dependencia de Springdoc OpenAPI
 
 ## Maven (pom.xml):
+
 <dependency>
     <groupId>org.springdoc</groupId>
     <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
     <version>2.3.0</version> 
 </dependency>
-## Después de añadir la dependencia, asegúrate de que tu sistema de construcción descargue las nuevas dependencias (por ejemplo, ejecutando mvn clean install en Maven.
 
-## Paso 2: Ejecutar tu Aplicación Spring Boot
+## Después de añadir la dependencia, asegúrate de que tu sistema de construcción descargue 
+## las nuevas dependencias (por ejemplo, ejecutando mvn clean install en Maven.
+
+# Paso 2: Ejecutar tu Aplicación Spring Boot
 
 Una vez que la dependencia de Springdoc OpenAPI esté en tu classpath, ejecuta tu aplicación Spring Boot normalmente.
 
-## Paso 3: Acceder a la Documentación Generada
+# Paso 3: Acceder a la Documentación Generada
 
-Springdoc OpenAPI genera automáticamente la documentación de tu API en formato OpenAPI 3.0. Puedes acceder a la interfaz de usuario de Swagger UI 
-(que permite explorar y probar tu API) a través de la siguiente URL, asumiendo que tu aplicación se ejecuta en el puerto 8080:
+Springdoc OpenAPI genera automáticamente la documentación de tu API en formato OpenAPI 3.0. Puedes acceder a la 
+interfaz de usuario de Swagger UI (que permite explorar y probar tu API) a través de la siguiente URL, asumiendo 
+que tu aplicación se ejecuta en el puerto 8080:
 
 # http://localhost:8080/swagger-ui/index.html
 
-## Si has configurado un server.servlet.context-path diferente en tu application.properties o application.yml, deberás incluirlo en la URL. Por ejemplo, si tu context path es /api, la URL sería:
+## Si has configurado un server.servlet.context-path diferente en tu application.properties o application.yml, 
+## deberás incluirlo en la URL. Por ejemplo, si tu context path es /api, la URL sería:
 
 # http://localhost:8080/api/swagger-ui/index.html
 
@@ -30,34 +37,44 @@ Springdoc OpenAPI genera automáticamente la documentación de tu API en formato
 JSON: http://localhost:8080/v3/api-docs (o /api/v3/api-docs si tienes un context path)
 YAML: http://localhost:8080/v3/api-docs.yaml (o /api/v3/api-docs.yaml si tienes un context path)
 
-## Paso 4: Personalizar la Documentación (Opcional pero Recomendado)
+# Paso 4: Personalizar la Documentación (Opcional pero Recomendado)
 
-Aunque Springdoc OpenAPI genera documentación automáticamente, es importante personalizarla para que sea más informativa y útil para los consumidores de tu API. Puedes usar varias anotaciones proporcionadas por Springdoc OpenAPI para esto:
+Aunque Springdoc OpenAPI genera documentación automáticamente, es importante personalizarla para que sea 
+más informativa y útil para los consumidores de tu API. Puedes usar varias anotaciones proporcionadas por 
+Springdoc OpenAPI para esto:
 
 ## A nivel de Clase del Controlador:
 
-@Tag(name = "Nombre del Recurso", description = "Descripción del Recurso"): Agrupa las operaciones relacionadas bajo un nombre y proporciona una descripción para el recurso.
-A nivel de Método del Controlador (Endpoints):
+@Tag(name = "Nombre del Recurso", description = "Descripción del Recurso"): Agrupa las operaciones relacionadas 
+bajo un nombre y proporciona una descripción para el recurso. A nivel de Método del Controlador (Endpoints):
 
-@Operation(summary = "Resumen de la Operación", description = "Descripción detallada de la operación"): Proporciona un resumen conciso y una descripción más extensa de lo que hace el endpoint.
-@Parameters(...) y @Parameter(...): Documentan los parámetros de la solicitud (path variables, query parameters, headers, cookies).
+@Operation(summary = "Resumen de la Operación", description = "Descripción detallada de la operación"): 
+Proporciona un resumen conciso y una descripción más extensa de lo que hace el endpoint.
+
+@Parameters(...) y @Parameter(...): Documentan los parámetros de la solicitud 
+(path variables, query parameters, headers, cookies).
 name: Nombre del parámetro.
 in: Ubicación del parámetro (path, query, header, cookie).
 description: Descripción del parámetro.
 required: Indica si el parámetro es obligatorio.
 schema: Define el tipo de dato del parámetro.
+
 @RequestBody(...): Documenta el cuerpo de la solicitud para métodos POST, PUT, etc.
 description: Descripción del cuerpo de la solicitud.
 required: Indica si el cuerpo de la solicitud es obligatorio.
 content: Define el tipo de contenido (e.g., application/json) y el schema del objeto.
+
 @ApiResponse(...) y @ApiResponses(...): Documentan las posibles respuestas del endpoint.
 responseCode: Código de estado HTTP de la respuesta (e.g., "200", "400", "500").
 description: Descripción de la respuesta para el código de estado dado.
 content: Define el tipo de contenido de la respuesta y su schema.
 A nivel de Clase del Modelo (DTOs, Entidades):
 
-@Schema(description = "Descripción del Modelo", example = "Ejemplo de valor"): Proporciona una descripción y un ejemplo para el modelo.
-@Schema(name = "nombreDelAtributo", description = "Descripción del Atributo", example = "valor de ejemplo", required = true/false): Documenta atributos individuales dentro de un modelo.
+@Schema(description = "Descripción del Modelo", example = "Ejemplo de valor"): Proporciona 
+una descripción y un ejemplo para el modelo.
+
+@Schema(name = "nombreDelAtributo", description = "Descripción del Atributo", 
+example = "valor de ejemplo", required = true/false): Documenta atributos individuales dentro de un modelo.
 
 # Ejemplo de un Controlador Documentado:
 import io.swagger.v3.oas.annotations.Operation;
@@ -146,9 +163,11 @@ class Usuario {
         this.contraseña = contraseña;
     }
 }
+
 # Paso 5: Configuración Adicional (Opcional)
 
-## Puedes personalizar aún más la documentación de tu API configurando propiedades en tu archivo application.properties o application.yml. Algunas configuraciones comunes incluyen:
+## Puedes personalizar aún más la documentación de tu API configurando propiedades en tu archivo:
+## application.properties o application.yml. Algunas configuraciones comunes incluyen:
 
 springdoc:
   api-docs:
@@ -176,7 +195,8 @@ springdoc:
     - url: https://api.ejemplo.com
       description: Servidor de producción
 
-## Consulta la documentación oficial de Springdoc OpenAPI para obtener una lista completa de las propiedades de configuración disponibles.
+## Consulta la documentación oficial de Springdoc OpenAPI para obtener una 
+## lista completa de las propiedades de configuración disponibles.
 
 Siguiendo estos pasos, podrás documentar eficazmente tu proyecto Spring Boot con Java 21 utilizando Springdoc OpenAPI,
 proporcionando una documentación clara y útil para los consumidores de tu API. Recuerda revisar la interfaz de 
