@@ -168,37 +168,39 @@ class Usuario {
 
 ## Puedes personalizar aún más la documentación de tu API configurando propiedades en tu archivo:
 ## application.properties o application.yml. Algunas configuraciones comunes incluyen:
-
+#------------------------------------------------------------------------------------------------------------------
 # YAML
-
+#------------------------------------------------------------------------------------------------------------------
 ## springdoc:
-#  api-docs:
-#    path: /v3/api-docs # Cambiar la ruta de la definición OpenAPI
-#  swagger-ui:
-#    path: /swagger-ui.html # Cambiar la ruta de la interfaz de Swagger UI
- #   config:
-  #    syntaxHighlight:
-   #     activated: true
-    #    theme: monokai
-  # info:
-#    title: Mi API de Usuarios
- #   version: v1
-  #  description: API para gestionar usuarios
- #   contact:
-  #    name: Tu Nombre
-   #   email: tu.email@example.com
-    #  url: http://tu-sitio-web.com
-  #  license:
-  #    name: Apache 2.0
-   #   url: https://www.apache.org/licenses/LICENSE-2.0
-#  servers:
- #   - url: http://localhost:8080
-  #    description: Servidor local de desarrollo
- #   - url: https://api.ejemplo.com
-#      description: Servidor de producción
+##  api-docs:
+##    path: /v3/api-docs # Cambiar la ruta de la definición OpenAPI
+##  swagger-ui:
+##    path: /swagger-ui.html # Cambiar la ruta de la interfaz de Swagger UI
+ ##   config:
+  ##    syntaxHighlight:
+   ##     activated: true
+    ##    theme: monokai
+  ## info:
+##    title: Mi API de Usuarios
+ ##   version: v1
+  ##  description: API para gestionar usuarios
+ ##   contact:
+  ##    name: Tu Nombre
+   ##   email: tu.email@example.com
+    ##  url: http://tu-sitio-web.com
+  ##  license:
+  ##    name: Apache 2.0
+   ##   url: https://www.apache.org/licenses/LICENSE-2.0
+##  servers:
+ ##   - url: http://localhost:8080
+  ##    description: Servidor local de desarrollo
+ ##   - url: https://api.ejemplo.com
+##      description: Servidor de producción
 
-## Consulta la documentación oficial de Springdoc OpenAPI para obtener una 
-## lista completa de las propiedades de configuración disponibles.
+# ------------------------------------------------------------------------------------------------------------------------
+
+# Consulta la documentación oficial de Springdoc OpenAPI para obtener una 
+# lista completa de las propiedades de configuración disponibles.
 
 Siguiendo estos pasos, podrás documentar eficazmente tu proyecto Spring Boot con Java 21 utilizando Springdoc OpenAPI,
 proporcionando una documentación clara y útil para los consumidores de tu API. Recuerda revisar la interfaz de 
